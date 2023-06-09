@@ -4,6 +4,10 @@ Bravo, le code est très bien et ton organisation est logique. Tu as mis la mét
 
 Ensuite, je tiens à te féliciter pour tes noms de méthodes qui sont très claires : des noms clairs = un code compréhensible et réutilisable par d'autres personnes donc un très bon point pour la vie pro !
 
+Aussi, j'ai remarqué pas mal de console.log et c'est un excellent réflexe pour voir le résultat de son code à tout moment et pouvoir ainsi l'adapter.
+
+Très bon point pour le middleware pour la session, excellente logique d'architecture pour les dossiers / fichiers (que ce soit au niveau du middleware ou pour les vues ejs). Juste, petit détail : mieux nommer le middleware (exemple : sessionMiddleware).
+
 Attention, pour les commentaires explicatifs tu en as mis dans le cardController et dans le router mais pas dans le reste du code. N'hésite pas à en glisser plus par ci, par là.
 
 `(searchedElement === 'null' ? ' sans élément' : + searchedElement)`
