@@ -10,7 +10,8 @@ Je vais essayer de te guider au mieux à travers les éléments à revoir :
   En effet, tu fais une boucle sur une variable qui renvoie UN seul élément et non pas un tableau. Il faut se rappeler que dans le controller, tu as cherché la carte correspondante à un id précis. Donc dans la vue ejs, pas besoin de se compliquer la vie avec une boucle, tu as déjà la carte que tu veux. 
 
 - La notion de middleware : 
-  - C'est vrai que ce n'est pas facile de savoir quand next (et je ne parle pas de l'émission). Dans tes controllers, tu fais globalement "si je n'ai pas le résultat attendu, je next". La logique est bonne mais il ne faut pas next. En effet, ce que l'on veut ce n'est pas de passer au middleware suivant mais au contraire d'avoir un message d'erreur disant que le problème est ici. Donc par exemple : `res.status(500).send('impossible d\'enregistrer l\'élément...');`.
+  - C'est vrai que ce n'est pas facile de savoir quand next (et je ne parle pas de l'émission). Dans tes controllers, tu fais globalement "si je n'ai pas le résultat attendu, je next". La logique est bonne mais il ne faut pas toujours next. En effet, parfois ce que l'on veut ce n'est pas de passer au middleware suivant mais au contraire d'avoir un message d'erreur disant que le problème est ici. Donc par exemple : `res.status(500).send('impossible d\'enregistrer l\'élément...');`.
+  En revanche si le middleware suivant est une erreur 404, il peut être intéressant de next si le res.statut de l'erreur est bien 404.
   - Dans l'index.js à la racine, tu as appelé cardPage avant le notFound alors qu'il est déjà appelé dans le router (donc quand tu fais une action précise). Si tu l'appelles ici, le middleware sera en attente dans la liste des choses à effectuer avant de passer au middleware suivant. De ce fait, ton notFound ne pourra jamais fonctionné.
 
 - La notion de query/params : 
@@ -21,6 +22,6 @@ Je vais essayer de te guider au mieux à travers les éléments à revoir :
   - Il faut donc penser à mettre des console.log pour voir quelle valeur tu récupères et ainsi pouvoir te corriger facilement.
   - Malgré cette confusion, tu as oublié d'envoyer l'élément récupéré dans le dataMapper en argument de la méthode "getCardByElement". Ainsi tu aurais pu indiquer de quel élément il s'agit pour la requête avec un "WHERE element=$1", [element]. Le IS NOT NULL n'est pas une mauvaise idée mais pour l'inverse : c'est-à-dire pour la selection "aucun élément" la requête était bien "WHERE element IS NULL".
 
-  Voilà les différents éléments à travailler que j'ai pu voir dans ton code. Maintenant je te conseille de suivre attentivement un élève ECP pour voir la logique utilisée en plus de la correction d'O'Clock. Tu peux aussi refaire le parcours à tête reposé et avec la correction sous les yeux, c'est un excellent exercice.
+  Voilà les différents éléments à travailler que j'ai pu voir dans ton code. Maintenant je te conseille de suivre attentivement un élève ECP pour voir la logique utilisée en plus de la correction d'O'Clock. Tu peux aussi refaire le parcours à tête reposée et avec la correction sous les yeux, c'est un excellent exercice.
 
   Je vais finir sur des notes positives : il n'y a pas de failles au niveau des injections SQL, le code est clair au niveau des noms choisis et il y a quelques commentaires, ce qui est bien.

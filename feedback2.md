@@ -1,6 +1,6 @@
 ## Feedback 2
 
-Bravo pour ta persévérance, tu n'as rien lâché et tu as continué pour au moins essayer de réussir le deck. C'est un très bon état d'esprit qui est essentiel et qui te permettra d'aller très loin.
+Bravo pour ta persévérance, tu n'as rien lâché et tu as continué pour essayer de réussir le deck. C'est un très bon état d'esprit qui est essentiel et qui te permettra d'aller très loin.
 
 Bravo pour le travail accompli : on peut cliquer sur une card et afficher son détail (même si la view ejs mériterait un peu plus de travail) et on peut ajouter des cards au deck.
 
